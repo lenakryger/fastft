@@ -1,4 +1,5 @@
 include(../cmake/FetchDependency.cmake)
+include(../cmake/CopySharedToBinaryDir.cmake)
 set(FASTFT_TESTS_NAME "${FASTFT_NAME}_tests")
 
 set(gtest_force_shared_crt ON)
@@ -32,6 +33,8 @@ target_link_libraries(${FASTFT_TESTS_NAME}
 					  gtest gtest_main
                       ${FASTFT_NAME})
 add_dependencies(${FASTFT_TESTS_NAME} gtest gtest_main)
+
+CopySharedToBinaryDir(${FASTFT_TESTS_NAME} ${fftw_BINARY_DIR})
 
 # Optionally, you can copy resources needed for testing to the build directory
 # file(COPY resources DESTINATION ${CMAKE_BINARY_DIR})

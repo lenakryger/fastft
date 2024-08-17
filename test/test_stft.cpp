@@ -102,8 +102,8 @@ TEST_F(STFT, test_stft_initialization) {
     ASSERT_EQ(stft_struct.hop, hop_size);    
 }
 
-TEST_F(STFT, test_stft_compute) {
-  
+TEST_F(STFT, test_stft_compute) {  
+  stft_init(&stft_struct, fft_size, win_size, hop_size, &padding);
   ASSERT_EQ(stft_struct.nfft, fft_size);    
   ASSERT_EQ(stft_struct.win, win_size);    
   ASSERT_EQ(stft_struct.hop, hop_size);    

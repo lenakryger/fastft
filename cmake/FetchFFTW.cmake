@@ -48,7 +48,9 @@ function(FetchFFTW target_name)
 			BUILD_BYPRODUCTS ""
 			LOG_DOWNLOAD ON
 		)
-		
+	endif()
+	
+	if(FETCH_VALID)
 		if(MSVC)
 			add_custom_target(generate_fftw_import_library
 				COMMAND ${CMAKE_COMMAND} -E echo "${GEN_IMPORT_LIB_CMD}"
@@ -57,6 +59,7 @@ function(FetchFFTW target_name)
 				VERBATIM
 				COMMENT "Generating fftw import library for ${CMAKE_CXX_COMPILER_ID}-${PLATFORM_SUFFIX}"
 			)
+
 		elseif(MINGW)
 			add_custom_target(generate_fftw_import_library
 				COMMAND ${CMAKE_COMMAND} -E echo "${GEN_IMPORT_LIB_CMD}"
@@ -76,5 +79,4 @@ function(FetchFFTW target_name)
 		set(fftw_SOURCE_DIR ${FFTW3_DIR} PARENT_SCOPE)
 		set(fftw_BINARY_DIR ${FFTW3_DIR} PARENT_SCOPE)
 	endif()
-
 endfunction()
