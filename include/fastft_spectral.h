@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 #include "fastft_istft.h"
-#include "fastft_pad.h"
+#include "fastft_padding.h"
 #include "fastft_stft.h"
 #include "fastft_window.h"
 
@@ -17,7 +17,7 @@ extern "C" {
  * @param magnitude Pointer to store the magnitude values.
  * @param length Length of the signal.
  */
-void calculate_magnitude(fftwf_complex *complex_signal, float *magnitude, int length);
+void fastft_spectral_calculate_magnitude(fftwf_complex *complex_signal, float *magnitude, int length);
 
 #ifdef __cplusplus
 }

@@ -9,7 +9,7 @@ extern "C" {
 #include <math.h>
 #include <stdlib.h>
 
-#include "fastft_pad.h"
+#include "fastft_padding.h"
 #include "fastft_window.h"
 #include "fastft_signal.h"
 
@@ -24,8 +24,8 @@ typedef struct {
     float* stft_in;           /**< Input array for STFT computation. */
     fftwf_complex* stft_out;  /**< Output array for STFT computation. */
     float *wnd;               /**< Hanning window array. */
-    Padding* padding;         /**< Pointer to the padding information. */
-} StftStruct;
+    fastft_padding_t* padding;         /**< Pointer to the padding information. */
+} fastft_STFT_t;
 
 /**
  * @brief Initialize the STFT structure.
@@ -36,7 +36,7 @@ typedef struct {
  * @param hop_length Length of the hop.
  * @param padding Pointer to the padding information.
  */
-void stft_init(StftStruct *stft_struct, int n_fft, int win_length, int hop_length, Padding* padding);
+void fastft_stft_init(fastft_STFT_t *stft_struct, int n_fft, int win_length, int hop_length, fastft_padding_t* padding);
 
 /**
  * @brief Compute the STFT (Short-Time Fourier Transform) for a given signal.
@@ -47,7 +47,7 @@ void stft_init(StftStruct *stft_struct, int n_fft, int win_length, int hop_lengt
  * @param do_pad Flag indicating whether padding should be applied.
  * @return Pointer to the computed STFT result.
  */
-fftwf_complex* stft_compute(StftStruct* stft_struct, Signal *channel_signal, int num_bins, int do_pad);
+fftwf_complex* fastft_stft_compute(fastft_STFT_t* stft_struct, fastft_signal_t *channel_signal, int num_bins, int do_pad);
 
 /**
  * @brief Inner function to compute the STFT.
@@ -58,14 +58,14 @@ fftwf_complex* stft_compute(StftStruct* stft_struct, Signal *channel_signal, int
  * @param num_frames Number of frames.
  * @param num_bins Number of bins.
  */
-void stft_inner(StftStruct* stft_struct, float* signal, fftwf_complex** stft_result, int num_frames, int num_bins);
+void fastft_stft_inner(fastft_STFT_t* stft_struct, float* signal, fftwf_complex** stft_result, int num_frames, int num_bins);
 
 /**
  * @brief Clean up resources allocated for STFT.
  *
  * @param stft_struct Pointer to the STFT structure to clean up.
  */
-void stft_clean(StftStruct *stft_struct);
+void fastft_stft_clean(fastft_STFT_t *stft_struct);
 
 #ifdef __cplusplus
 }

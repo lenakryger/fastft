@@ -10,7 +10,7 @@ include(cmake/GetPlatformLibraries.cmake)
 
 # Source files
 set(SOURCES
-    src/fastft_pad.c
+    src/fastft_padding.c
     src/fastft_window.c
     src/fastft_signal.c
     src/fastft_spectral.c
