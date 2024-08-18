@@ -1,4 +1,4 @@
-#include "pad.h"
+#include "fastft_pad.h"
 
 
 void init_padding(Padding* padding, PaddingMode mode, int width, int unpadded_signal_length, int padded_signal_length, int unpadded_num_frames, int padded_num_frames) {

@@ -1,10 +1,8 @@
 #include "gtest/gtest.h"
-extern "C" {
-    #include "trafo_istft.h"
-    #include "trafo_stft.h"
-    #include "signal.h"
-    #include "pad.h"
-}
+#include "fastft_istft.h"
+#include "fastft_stft.h"
+#include "fastft_signal.h"
+#include "fastft_pad.h"
 
 
 // Define your individual unit tests

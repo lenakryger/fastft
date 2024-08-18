@@ -1,4 +1,4 @@
-#include "window.h"
+#include "fastft_window.h"
 
 
 void compute_hanning_window(int n_fft, float *window) {

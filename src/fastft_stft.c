@@ -1,4 +1,4 @@
-#include "trafo_stft.h"
+#include "fastft_stft.h"
 
 
 void stft_init(StftStruct *stft_struct, int nfft, int win_length, int hop_length, Padding* padding) {

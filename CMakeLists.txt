@@ -10,12 +10,12 @@ include(cmake/GetPlatformLibraries.cmake)
 
 # Source files
 set(SOURCES
-    src/pad.c
-    src/window.c
-    src/signal.c
-    src/spectral.c
-    src/trafo_stft.c
-    src/trafo_istft.c
+    src/fastft_pad.c
+    src/fastft_window.c
+    src/fastft_signal.c
+    src/fastft_spectral.c
+    src/fastft_stft.c
+    src/fastft_istft.c
 )
 
 # Create a library target

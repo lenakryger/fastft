@@ -1,13 +1,17 @@
-#ifndef TRAFO_ISTFT_H
-#define TRAFO_ISTFT_H
+#ifndef FASTFT_ISTFT_H
+#define FASTFT_ISTFT_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <fftw3.h>
 #include <math.h>
 #include <stdlib.h>
 
-#include "pad.h"
-#include "window.h"
-#include "signal.h"
+#include "fastft_pad.h"
+#include "fastft_window.h"
+#include "fastft_signal.h"
 
 
 /**
@@ -60,5 +64,9 @@ void normalize_array(float *arr, int length, float max_value);
 
 // Function to find the maximum absolute value in an array
 float get_max(const float *arr, int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

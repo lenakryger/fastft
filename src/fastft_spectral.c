@@ -1,4 +1,4 @@
-#include "spectral.h"
+#include "fastft_spectral.h"
 
 
 void calculate_magnitude(fftwf_complex *complex_signal, float *magnitude, int length) {

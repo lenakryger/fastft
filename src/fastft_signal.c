@@ -1,7 +1,4 @@
-#include "signal.h"
-
-
-
+#include "fastft_signal.h"
 
 int compute_num_frames(int num_samples, int win, int hop) {
     int num_frames = (num_samples - win) / hop + 1;

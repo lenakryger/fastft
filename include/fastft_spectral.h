@@ -1,12 +1,14 @@
-#ifndef SPECTRAL_H
-#define SPECTRAL_H
+#ifndef FASTFT_SPECTRAL_H
+#define FASTFT_SPECTRAL_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#include "pad.h"
-#include "window.h"
-#include "trafo_stft.h"
-#include "trafo_istft.h"
-
+#include "fastft_istft.h"
+#include "fastft_pad.h"
+#include "fastft_stft.h"
+#include "fastft_window.h"
 
 /**
  * @brief Calculate the magnitude of complex signals.
@@ -16,5 +18,9 @@
  * @param length Length of the signal.
  */
 void calculate_magnitude(fftwf_complex *complex_signal, float *magnitude, int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

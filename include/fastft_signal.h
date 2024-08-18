@@ -1,5 +1,9 @@
-#ifndef SIGNAL_H
-#define SIGNAL_H
+#ifndef FASTFT_SIGNAL_H
+#define FASTFT_SIGNAL_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <fftw3.h>
 #include <stdlib.h>
@@ -32,5 +36,9 @@ int compute_num_frames(int num_samples, int win, int hop);
 float* read_wav_file(const char *filename, unsigned int *channels, int *total_samples_count);
 void write_wav_file(const char* filename, const float *audio_buffer, size_t total_samples_count, unsigned int sample_rate, unsigned int channels);
 void write_to_csv(const char *filename, fftwf_complex *stft_data, int num_frames, int num_bins);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

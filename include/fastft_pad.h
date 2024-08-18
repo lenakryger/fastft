@@ -1,5 +1,9 @@
-#ifndef PAD_H
-#define PAD_H
+#ifndef FASTFT_PAD_H
+#define FASTFT_PAD_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <string.h>
 #include <stdio.h>
@@ -47,5 +51,9 @@ void init_padding(Padding* padding, PaddingMode mode, int width, int unpadded_si
  * @param padding Pointer to the Padding structure where the padding information will be stored.
  */
 void apply_padding(float* signal, int signal_length, Padding* padding);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

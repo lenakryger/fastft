@@ -1,5 +1,4 @@
-#include "trafo_istft.h"
-
+#include "fastft_istft.h"
 
 void istft_init(IstftStruct *istft_struct, int n_fft, int reconstructed_signal_length, int win_length, int hop_length) {
     istft_struct->nfft = n_fft;

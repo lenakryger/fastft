@@ -1,13 +1,17 @@
-#ifndef TRAFO_STFT_H
-#define TRAFO_STFT_H
+#ifndef FASTFT_STFT_H
+#define FASTFT_STFT_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <fftw3.h>
 #include <math.h>
 #include <stdlib.h>
 
-#include "pad.h"
-#include "window.h"
-#include "signal.h"
+#include "fastft_pad.h"
+#include "fastft_window.h"
+#include "fastft_signal.h"
 
 /**
  * @brief Structure for STFT (Short-Time Fourier Transform) parameters and plans.
@@ -62,5 +66,9 @@ void stft_inner(StftStruct* stft_struct, float* signal, fftwf_complex** stft_res
  * @param stft_struct Pointer to the STFT structure to clean up.
  */
 void stft_clean(StftStruct *stft_struct);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

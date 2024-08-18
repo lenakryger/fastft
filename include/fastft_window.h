@@ -1,5 +1,9 @@
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef FASTFT_WINDOW_H
+#define FASTFT_WINDOW_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include <math.h>
 
@@ -16,5 +20,8 @@
  */
 void compute_hanning_window(int n_fft, float *window);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif
